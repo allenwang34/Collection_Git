@@ -56,7 +56,10 @@ public class TestDemo {
 								break;
 								}
 								catch (NullPointerException e){
-								break;
+									System.out.println("************************************************************************");
+									System.out.println("Error Occur!");
+								
+									break;
 								}
 							case 2: 
 								SC.updateNumInCart();
