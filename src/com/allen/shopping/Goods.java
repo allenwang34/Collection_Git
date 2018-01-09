@@ -5,6 +5,7 @@ public class Goods {
 	private String goodsName;
 	private double price;
 	private String goodsDesp;
+	public Goods() {}
 	public Goods(String goodsId, String goodsName, double price, String goodsDesp) {
 		super();
 		this.goodsId = goodsId;
@@ -61,6 +62,6 @@ public class Goods {
 	
 	@Override
 	public String toString() {
-		return "商品信息[编号：" + goodsId + "，名称：" + goodsName + "，价格：" + price + "，描述：" + goodsDesp + "]";
+		return "Goods Info[ID：" + goodsId + "，Name：" + goodsName + "，Price：" + price + "，Description：" + goodsDesp + "]";
 	}
 }
