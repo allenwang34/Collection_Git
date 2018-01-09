@@ -73,8 +73,20 @@ public class ShoppingCart {
 		System.out.println("Items in cart: ");
 		Iterator<GoodsInCart> it = shoppingCart.values().iterator();
 		while(it.hasNext()) {
-			System.out.println(it.next());
+			GoodsInCart temp = it.next();
+			System.out.println(temp.getGoodsInCart()+ " Amount: " + temp.getNum());
 		}
+	}
+	
+	public void settleAccounts() {
+		double totalPrice = 0.0;
+		Iterator<GoodsInCart> it = shoppingCart.values().iterator();
+		while(it.hasNext()) {
+			GoodsInCart temp = it.next();
+			double objPrice = temp.getNum() * temp.getGoodsInCart().getPrice();
+			totalPrice += objPrice;
+		}
+		System.out.println("The Total Price In Your Shopping Cart Is: $" + totalPrice);
 	}
 	
 

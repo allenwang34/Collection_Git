@@ -56,7 +56,6 @@ public class TestDemo {
 								break;
 								}
 								catch (NullPointerException e){
-									System.out.println("************************************************************************");
 									System.out.println("Error Occur!");
 								
 									break;
@@ -66,6 +65,11 @@ public class TestDemo {
 								break;
 							case 3:
 								SC.displayAllInCart();
+								break;
+							case 4: 
+								SC.settleAccounts();
+								keepSCMenu = false;
+								keepWorking = false;
 								break;
 							case 9:
 								keepSCMenu = false;
