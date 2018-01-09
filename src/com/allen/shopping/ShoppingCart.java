@@ -13,10 +13,11 @@ public class ShoppingCart {
 	}
 	public void addGoodsToCart(GoodsManage gm) throws NullPointerException {
 		gm.displayAllGoods();
-		System.out.println("************************");
+		System.out.println("************************************************************************");
 		System.out.println("Input the item ID you want to add into shopping cart: ");
 		Scanner sc = new Scanner(System.in);
 		String itemID = sc.next();
+		System.out.println("************************************************************************");
 		System.out.println("Please input the numer of item you want to add: ");
 		int num = sc.nextInt();
 		Set<Goods> gmSet= gm.getGoodsSet();
@@ -37,8 +38,9 @@ public class ShoppingCart {
 				}
 			}
 		}
+		System.out.println("************************************************************************");
 		System.out.println("Item: " + tempGoods.getGoodsName() + " has been added to your shopping cart!");
-		System.out.println("************************");
+		
 	}
 	
 	public Map<String, GoodsInCart> getShoppingCart() {
@@ -48,32 +50,31 @@ public class ShoppingCart {
 		this.shoppingCart = shoppingCart;
 	}
 	public void updateNumInCart() {
-		System.out.println("************************");
+		System.out.println("************************************************************************");
 		System.out.println("Give me the item ID: ");
 		Scanner sc = new Scanner(System.in);
 		String itemID = sc.next();
 		if (shoppingCart.containsKey(itemID)) {
+			System.out.println("************************************************************************");
 			System.out.println("How many items you want to change?");
 			int itemNum = sc.nextInt();
 			shoppingCart.get(itemID).setNum(itemNum);
+			System.out.println("************************************************************************");
 			System.out.println(itemNum + " items have been updated!");
-			System.out.println("************************");
 		}
 		else {
+			System.out.println("************************************************************************");
 			System.out.println("Please add the item to the shopping cart first!");
-			System.out.println("************************");
 		}
 	}
 	
 	public void displayAllInCart() {
-		System.out.println("************************");
+		System.out.println("************************************************************************");
 		System.out.println("Items in cart: ");
 		Iterator<GoodsInCart> it = shoppingCart.values().iterator();
 		while(it.hasNext()) {
 			System.out.println(it.next());
 		}
-		System.out.println("************************");
-		
 	}
 	
 
