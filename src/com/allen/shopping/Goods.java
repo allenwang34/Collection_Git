@@ -1,5 +1,4 @@
 package com.allen.shopping;
-import java.util.*;
 
 public class Goods {
 	private String goodsId;
@@ -53,36 +52,15 @@ public class Goods {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Goods other = (Goods) obj;
-		if (goodsDesp == null) {
-			if (other.goodsDesp != null)
-				return false;
-		} else if (!goodsDesp.equals(other.goodsDesp))
-			return false;
-		if (goodsId == null) {
-			if (other.goodsId != null)
-				return false;
-		} else if (!goodsId.equals(other.goodsId))
-			return false;
-		if (goodsName == null) {
-			if (other.goodsName != null)
-				return false;
-		} else if (!goodsName.equals(other.goodsName))
-			return false;
-		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
-			return false;
-		return true;
+		if (obj.getClass()==Goods.class) {
+			Goods goods = (Goods) obj;
+			return goods.getGoodsId().equals(this.goodsId) && goods.getGoodsName().equals(this.goodsName) && goods.getPrice()==this.price && goods.getGoodsDesp().equals(this.goodsDesp);
+		}
+		return false;
 	}
 	
 	@Override
 	public String toString() {
-		return "…Ã∆∑–≈œ¢[±‡∫≈£∫" + goodsId + "£¨√˚≥∆£∫" + goodsName + "£¨º€∏Ò£∫" + price + "£¨√Ë ˆ£∫" + goodsDesp + "]";
+		return "ÂïÜÂìÅ‰ø°ÊÅØ[ÁºñÂè∑Ôºö" + goodsId + "ÔºåÂêçÁß∞Ôºö" + goodsName + "Ôºå‰ª∑Ê†ºÔºö" + price + "ÔºåÊèèËø∞Ôºö" + goodsDesp + "]";
 	}
-	
-	
-
 }
